@@ -2,14 +2,13 @@ import React from 'react';
 
 function NavComponent() {
     return (
-        <header className={"bg-main"}>
-            <nav>
-                <p><span>&lt;C/&gt;</span><span/> Maximilien LEMOINE</p>
-                <ul>
-                    <li><a href={".bg-main"}>Home</a></li>
-                    <li><a href={".bg-main"}>About</a></li>
-                    <li><a href={".bg-main"}>Services</a></li>
-                    <li><a href={".bg-main"}>Contact</a></li>
+        <header className={"bg-main "}>
+            <nav className={'flex justify-between'}>
+                <p className={''}><span className={'primary-color'}>&lt;C/&gt;</span> Maximilien LEMOINE</p>
+                <ul className={'flex gap-2'}>
+                    <li className={'hidden sm:block'}><a href={'#about'}>A propos</a></li>
+                    <li className={'hidden sm:block'}><a href={'#projects'}>Projets</a></li>
+                    <li><a href={'#contact'}>Contact</a></li>
                 </ul>
             </nav>
         </header>
