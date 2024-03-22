@@ -3,36 +3,24 @@
 body {
     font-family: 'IBM Plex Mono', monospace;
     color: #FFFFFF;
+    font-size: 12px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.bg-main {
-    background-color: #292F36;
+.card-cv {
+    width: 320px;
+    height: 480px;
+    border: solid 1px #FFFFFF;
+    border-radius: 160px 0 160px 0;
 }
 
-.bg-dark {
-    background-color: #1A1E23;
+.ubuntu {
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.bg-primary {
-    background-color: #F78E12;
-}
-
-.primary-color {
-    color: #F78E12;
-}
-
-.bg-secondary {
-    background-color: #FAD898;
-}
-
-.secondary-color {
-    color: #FAD898;
-}
-
-.text-white {
-    color: #FFFFFF;
+.hero{
+    min-height: 90vh;
 }
