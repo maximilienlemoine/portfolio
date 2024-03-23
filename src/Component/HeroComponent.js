@@ -1,12 +1,12 @@
 import React from "react";
-import CardComponent from "./CardComponent";
+import CardMeComponent from "./CardMeComponent";
 
 function HeroComponent() {
     return (
         <section className={'pb-10 hero'}>
             <h2 className={'text-secondary text-center hidden md:block text-7xl py-10 pt-20'}>Développeur</h2>
             <div className={'flex flex-col items-center xl:flex-row xl:justify-evenly'}>
-                <CardComponent/>
+                <CardMeComponent/>
                 <div className={'mx-4 my-7 xl:my-0'}>
                     <div>
                         <span><span className={'text-secondary'}>&lt;h1&gt;</span></span><br/>
