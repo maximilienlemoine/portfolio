@@ -5,7 +5,7 @@ import LinkIcon from "../icons/link.svg";
 import DownloadIcon from "../icons/download.svg";
 import React from "react";
 
-function CardComponent() {
+function CardMeComponent() {
     return (
     <div className={'border-white border card-cv mt-10 md:mt-0'}>
         <img src={MaximilienImage} alt={'Photographie de Maximilien'}
@@ -37,4 +37,4 @@ function CardComponent() {
     );
 }
 
-export default CardComponent;
+export default CardMeComponent;
