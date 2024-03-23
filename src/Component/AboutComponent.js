@@ -23,7 +23,7 @@ function AboutComponent() {
                             en <span className={'text-primary'}>PHP</span>, <span
                             className={'text-primary'}>JavaScript</span> (y compris les frameworks comme <span
                             className={'text-primary'}>React</span>, <span className={'text-primary'}>Vue.js</span>) ou
-                            encore <span className={'text-primary'}>Node.js</span>, ainsi que des base en <span
+                            encore <span className={'text-primary'}>Node.js</span>, ainsi que des bases en <span
                             className={'text-primary'}>C#</span>. <br/> <br/>
 
                             Je me suis rapidement familiarisé avec le Framework <span
@@ -38,7 +38,7 @@ function AboutComponent() {
 
                             Cette combinaison de compétences me permet de concevoir et de mettre en œuvre des solutions
                             web et logicielles <span className={'text-primary'}>robustes</span> et <span
-                            className={'text-primary'}>innovantes</span>, tout en étant capable de m'<span
+                            className={'text-primary'}>innovants</span>, tout en étant capable de m'<span
                             className={'text-primary'}>adapter aux besoins spécifiques</span> de chaque projet. <br/>
                             <br/>
 
