@@ -1,4 +1,3 @@
-import React from 'react';
 import MouseIcon from '../icons/mouse.svg';
 import Line from '../icons/Line.svg';
 
