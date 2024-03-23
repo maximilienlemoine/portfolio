@@ -1,5 +1,9 @@
 @import "./css/fonts.css";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'IBM Plex Mono', monospace;
     color: #FFFFFF;
