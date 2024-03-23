@@ -17,12 +17,12 @@ function SkillsComponent() {
         <section className={'bg-background section'} id='skills'>
             <ScrollComponent/>
             <div>
-                <div className={'flex flex-col items-center gap-5'}>
+                <div className={'flex flex-col items-center gap-3'}>
                     <h2 className={'text-3xl md:text-4xl bg-background p-3 text-primary text-center pb-0'}>Compétences</h2>
                     <hr className={'border-primary w-3/12 sm:w-2/12 lg:w-1/12 my-0'}/>
                     <p>Je n'arrête jamais d'apprendre et de m'améliorer.</p>
                 </div>
-                <div className={'flex flex-col md:flex-row justify-center flex-wrap items-center gap-8 mt-10 md:mt-20'}>
+                <div className={'flex flex-col md:flex-row justify-center flex-wrap items-center gap-8 mt-10'}>
                     <CardSkillComponent skillTitle={'Front-end'} skillDescription={'JavaScript (React, Vue.js), Tailwind'} skillImage={FrontEndIcon}/>
                     <CardSkillComponent skillTitle={'Back-end'} skillDescription={'PHP (Symfony), Node.js (Express.js), Sql'} skillImage={BackEndIcon}/>
                     <CardSkillComponent skillTitle={'Développement Mobile'} skillDescription={'React Native'} skillImage={MobileIcon}/>
@@ -30,7 +30,7 @@ function SkillsComponent() {
                     <CardSkillComponent skillTitle={'Administration Réseau'} skillDescription={'Linux, Docker'} skillImage={NetworkIcon}/>
                     <CardSkillComponent skillTitle={'Outils de développement'} skillDescription={'Git, GitHub, PhpStorm'} skillImage={ToolsIcon}/>
                 </div>
-                <div className={'flex flex-row flex-wrap justify-evenly items-center gap-10 my-10 md:my-20'}>
+                <div className={'flex flex-row flex-wrap justify-evenly items-center gap-10 my-10'}>
                     <div>
                         <img src={PhpIcon} alt={'Php'} className={'w-28 h-28 bg-php p-4 rounded-full'}/>
                         <p className={'text-center text-php text-xl ubuntu mt-3'}>PHP</p>
