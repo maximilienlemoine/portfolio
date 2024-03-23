@@ -3,11 +3,12 @@ import LinkedInIcon from "../icons/footer-linkedin.svg";
 import GitHubIcon from "../icons/footer-github.svg";
 
 function FooterComponent() {
+    const date = new Date();
     return (
         <footer className={'bg-background ubuntu py-5 text-center'}>
             <hr className={'border-gray m-5'}/>
             <div className={'flex flex-col-reverse sm:flex-row justify-evenly items-center gap-5'}>
-                <p>© 2024 Maximilien Lemoine - Tous droits réservés</p>
+                <p>© {date.getFullYear()} Maximilien Lemoine - Tous droits réservés</p>
                 <div className={'flex'}>
                     <a href={'https://www.linkedin.com/in/maximilien-lemoine/'} className={'bg-secondary rounded-full p-3'}>
                         <img src={LinkedInIcon} alt={'Icone de linkedin'}/>
