@@ -5,6 +5,7 @@ import React from "react";
 import FooterComponent from "./Component/FooterComponent";
 import AboutComponent from "./Component/AboutComponent";
 import SkillsComponent from "./Component/SkillsComponent";
+import ContactComponent from "./Component/ContactComponent";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <HeroComponent/>
             <AboutComponent/>
             <SkillsComponent/>
+            <ContactComponent/>
             <FooterComponent/>
         </div>
     );
