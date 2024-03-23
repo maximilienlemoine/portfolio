@@ -1,8 +1,38 @@
 import ScrollComponent from "./ScrollComponent";
 import React from "react";
 import SendIcon from "../icons/send.svg";
+import Mailjet, {Client as MailJet} from "node-mailjet";
 
 function ContactComponent() {
+    const mailjet = MailJet.apiConnect(
+        `${process.env.REACT_APP_MAILJET_API_KEY}`,
+        `${process.env.REACT_APP_MAILJET_SECRET_KEY}`,
+    );
+
+    const sendEmail = async () => {
+        const request = await mailjet.post('send', {'version': 'v3.1'})
+            .request({
+                "Messages": [
+                    {
+                        "From": {
+                            "Email": process.env.REACT_APP_MAILJET_SENDER_EMAIL,
+                            "Name": process.env.REACT_APP_MAILJET_SENDER_NAME
+                        },
+                        "To": [
+                            {
+                                "Email": "maximilien.lemoine.pro@gmail.com",
+                                "Name": "TEST"
+                            }
+                        ],
+                        "Subject": "TEST",
+                        "TextPart": "TEESSST",
+                        "HTMLPart": "TEEEESTT",
+                    }
+                ]
+            });
+        console.log(request);
+    }
+
     return (
         <section className={'bg-background section py-14'} id='contact'>
             <ScrollComponent/>
@@ -41,7 +71,11 @@ function ContactComponent() {
                             className={'p-3 bg-background border-0 border-secondary border-b-2 text-white'}
                         />
                     </label>
-                    <button className={'bg-primary text-background p-3 rounded-2xl flex items-center text-xl ubuntu'}>Envoyer
+                    <button
+                        className={'bg-primary text-background p-3 rounded-2xl flex items-center text-xl ubuntu'}
+                        onClick={sendEmail}
+                    >
+                        Envoyer
                         <img src={SendIcon} alt={'send'} className={'w-5 h-5 ml-2'}/>
                     </button>
                 </form>
