@@ -2,7 +2,6 @@ import ScrollComponent from "./ScrollComponent";
 import React, {useEffect, useState} from "react";
 import SendIcon from "../icons/send.svg";
 import CloseIcon from "../icons/xmark.svg";
-import {Client as MailJet} from "node-mailjet";
 
 function ContactComponent() {
     const [formData, setFormData] = useState({name: '', email: '', message: ''});
@@ -10,14 +9,9 @@ function ContactComponent() {
     const [isLoading, setIsLoading] = useState(false);
     const [flashMessage, setFlashMessage] = useState('');
 
-    const mailjet = MailJet.apiConnect(
-        `${process.env.REACT_APP_MAILJET_API_KEY}`,
-        `${process.env.REACT_APP_MAILJET_SECRET_KEY}`,
-    );
-
     useEffect(() => {
         if (isLoading) {
-            sendEmail();
+            return sendEmail();
         }
     }, [isLoading]);
 
@@ -26,28 +20,16 @@ function ContactComponent() {
             return;
 
         try {
-            const request = await mailjet.post('send', {'version': 'v3.1'})
-                .request({
-                    "Messages": [
-                        {
-                            "From": {
-                                "Email": process.env.REACT_APP_MAILJET_SENDER_EMAIL,
-                                "Name": process.env.REACT_APP_MAILJET_SENDER_NAME
-                            },
-                            "To": [
-                                {
-                                    "Email": "maximilien.lemoine.pro@gmail.com",
-                                    "Name": "TEST"
-                                }
-                            ],
-                            "Subject": "Demande de renseignements",
-                            "TextPart": `Nom: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
-                            "HTMLPart": `<h3>Demande de renseignements</h3><br><p><strong>Nom:</strong> ${formData.name}</p><p><strong>Email:</strong> ${formData.email}</p><p><strong>Message:</strong> ${formData.message}</p>`,
-                        }
-                    ]
-                });
-            setFlashMessage('Email sent successfully!');
-            setFormData({name: '', email: '', message: ''});
+            const response = await fetch(process.env.REACT_APP_BACK_APP_URL + '/send-email', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            });
+            const data = await response.json();
+            setFlashMessage(data.message);
+            if (response.ok) {
+                setFormData({name: '', email: '', message: ''});
+            }
         } catch (e) {
             console.error(e);
         }
@@ -106,9 +88,15 @@ function ContactComponent() {
                         Envoyez-moi un message!
                     </h3>
                 </div>
+                <div className="flex justify-center">
+                    <div
+                        className={'text-background p-2 rounded-md ubuntu md:text-xl bg-red-300 w-4/6 flex justify-between'}>
+                        <p>Formulaire momentanément indisponible, veuillez utiliser l'adresse : <a href={'mailto:maximilien.lemoine.pro@gmail.com'}>maximilien.lemoine.pro@gmail.com</a></p>
+                    </div>
+                </div>
                 {flashMessage && <div className="flex justify-center">
                     <div
-                        className={'text-background p-2 rounded-md ubuntu text-xl bg-green-500 w-4/6 flex justify-between'}>
+                        className={'text-background p-2 rounded-md ubuntu md:text-xl bg-green-500 w-4/6 flex justify-between'}>
                         <p>{flashMessage}</p>
                         <button onClick={clearFlash}>
                             <img src={CloseIcon} alt={'close'} className={'w-5 h-5'}/>
@@ -166,6 +154,7 @@ function ContactComponent() {
                         type={'button'}
                         id={'form-contact-submit'}
                         onClick={handleSubmit}
+                        disabled={true} //TODO: Enable button when form is available
                     >
                         Envoyer
                         <img src={SendIcon} alt={'send'} className={'w-5 h-5 ml-2'}/>
