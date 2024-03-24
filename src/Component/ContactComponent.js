@@ -1,36 +1,97 @@
 import ScrollComponent from "./ScrollComponent";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import SendIcon from "../icons/send.svg";
-import Mailjet, {Client as MailJet} from "node-mailjet";
+import CloseIcon from "../icons/xmark.svg";
+import {Client as MailJet} from "node-mailjet";
 
 function ContactComponent() {
+    const [formData, setFormData] = useState({name: '', email: '', message: ''});
+    const [formErrors, setFormErrors] = useState({name: '', email: '', message: ''});
+    const [isLoading, setIsLoading] = useState(false);
+    const [flashMessage, setFlashMessage] = useState('');
+
     const mailjet = MailJet.apiConnect(
         `${process.env.REACT_APP_MAILJET_API_KEY}`,
         `${process.env.REACT_APP_MAILJET_SECRET_KEY}`,
     );
 
+    useEffect(() => {
+        if (isLoading) {
+            sendEmail();
+        }
+    }, [isLoading]);
+
     const sendEmail = async () => {
-        const request = await mailjet.post('send', {'version': 'v3.1'})
-            .request({
-                "Messages": [
-                    {
-                        "From": {
-                            "Email": process.env.REACT_APP_MAILJET_SENDER_EMAIL,
-                            "Name": process.env.REACT_APP_MAILJET_SENDER_NAME
-                        },
-                        "To": [
-                            {
-                                "Email": "maximilien.lemoine.pro@gmail.com",
-                                "Name": "TEST"
-                            }
-                        ],
-                        "Subject": "TEST",
-                        "TextPart": "TEESSST",
-                        "HTMLPart": "TEEEESTT",
-                    }
-                ]
-            });
-        console.log(request);
+        if (isErrors())
+            return;
+
+        try {
+            const request = await mailjet.post('send', {'version': 'v3.1'})
+                .request({
+                    "Messages": [
+                        {
+                            "From": {
+                                "Email": process.env.REACT_APP_MAILJET_SENDER_EMAIL,
+                                "Name": process.env.REACT_APP_MAILJET_SENDER_NAME
+                            },
+                            "To": [
+                                {
+                                    "Email": "maximilien.lemoine.pro@gmail.com",
+                                    "Name": "TEST"
+                                }
+                            ],
+                            "Subject": "Demande de renseignements",
+                            "TextPart": `Nom: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+                            "HTMLPart": `<h3>Demande de renseignements</h3><br><p><strong>Nom:</strong> ${formData.name}</p><p><strong>Email:</strong> ${formData.email}</p><p><strong>Message:</strong> ${formData.message}</p>`,
+                        }
+                    ]
+                });
+            setFlashMessage('Email sent successfully!');
+            setFormData({name: '', email: '', message: ''});
+        } catch (e) {
+            console.error(e);
+        }
+        setIsLoading(false);
+    }
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value});
+        handleErrors(e);
+    }
+
+    const isErrors = () => {
+        return !!(formErrors.name || formErrors.email || formErrors.message);
+    }
+
+    const handleErrors = (e) => {
+        setFormErrors({name: '', email: '', message: ''});
+
+        // Check if name is not null
+        if (!formData.name.trim()) {
+            setFormErrors((errors) => ({...errors, name: 'Renseignez votre nom.'}));
+        }
+
+        // Check if email is not null and is a valid email
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        if (!formData.email.trim() || !emailRegex.test(formData.email)) {
+            setFormErrors((errors) => ({...errors, email: 'Renseignez une adresse email valide.'}));
+        }
+
+        // Check if message is not null
+        if (!formData.message.trim()) {
+            setFormErrors((errors) => ({...errors, message: 'Renseignez un message.'}));
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleErrors(e);
+
+        setIsLoading(true);
+    }
+
+    const clearFlash = () => {
+        setFlashMessage('');
     }
 
     return (
@@ -45,35 +106,66 @@ function ContactComponent() {
                         Envoyez-moi un message!
                     </h3>
                 </div>
-                <form className={'flex flex-col items-center gap-3 gap-y-12 mt-10'}>
+                {flashMessage && <div className="flex justify-center">
+                    <div
+                        className={'text-background p-2 rounded-md ubuntu text-xl bg-green-500 w-4/6 flex justify-between'}>
+                        <p>{flashMessage}</p>
+                        <button onClick={clearFlash}>
+                            <img src={CloseIcon} alt={'close'} className={'w-5 h-5'}/>
+                        </button>
+                    </div>
+                </div>}
+                <form className={'flex flex-col items-center gap-3 gap-y-12 mt-10'} id={'form-contact'}>
                     <div className={'container flex flex-col md:flex-row items-center gap-3 md:gap-28 md:w-4/6'}>
                         <label className={'flex flex-col text-primary w-5/6 md:w-3/6'}>
                             Nom *
                             <input
                                 type={'text'}
+                                name={'name'}
+                                required={true}
                                 placeholder={'Reinseignez votre nom complet'}
                                 className={'p-3 bg-background border-0 border-secondary border-b-2 text-white'}
+                                value={formData.name}
+                                onChange={handleChange}
                             />
+                            <p className={formErrors.name ? 'text-red-600' : 'hidden'}>
+                                {formErrors.name}
+                            </p>
                         </label>
                         <label className={'flex flex-col text-primary w-5/6 md:w-3/6'}>
                             Email *
                             <input
                                 type={'email'}
-                                placeholder={'Renseignez votre adresse email'}
+                                name={'email'}
+                                required={true}
+                                placeholder={'Reinseignez votre adresse email'}
                                 className={'p-3 bg-background border-0 border-secondary border-b-2 text-white'}
+                                value={formData.email}
+                                onChange={handleChange}
                             />
+                            <p className={formErrors.email ? 'text-red-600' : 'hidden'}>
+                                {formErrors.email}
+                            </p>
                         </label>
                     </div>
                     <label className={'container flex flex-col text-primary w-5/6 sm:w-9/12 md:w-4/6'}>
                         Message *
                         <textarea
+                            name={'message'}
                             placeholder={'Renseignez votre message ici...'}
                             className={'p-3 bg-background border-0 border-secondary border-b-2 text-white'}
+                            value={formData.message}
+                            onChange={handleChange}
                         />
+                        <p className={formErrors.message ? 'text-red-600' : 'hidden'}>
+                            {formErrors.message}
+                        </p>
                     </label>
                     <button
                         className={'bg-primary text-background p-3 rounded-2xl flex items-center text-xl ubuntu'}
-                        onClick={sendEmail}
+                        type={'button'}
+                        id={'form-contact-submit'}
+                        onClick={handleSubmit}
                     >
                         Envoyer
                         <img src={SendIcon} alt={'send'} className={'w-5 h-5 ml-2'}/>
