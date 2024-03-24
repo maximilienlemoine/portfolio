@@ -30,7 +30,7 @@ function SkillsComponent() {
                     <CardSkillComponent skillTitle={'Administration Réseau'} skillDescription={'Linux, Docker'} skillImage={NetworkIcon}/>
                     <CardSkillComponent skillTitle={'Outils de développement'} skillDescription={'Git, GitHub, PhpStorm'} skillImage={ToolsIcon}/>
                 </div>
-                <div className={'flex flex-row flex-wrap justify-evenly items-center gap-10 my-10'}>
+                <div className={'flex flex-row flex-wrap justify-evenly items-center gap-10 my-10 lg:my-20'}>
                     <div>
                         <img src={PhpIcon} alt={'Php'} className={'w-28 h-28 bg-php p-4 rounded-full'}/>
                         <p className={'text-center text-php text-xl ubuntu mt-3'}>PHP</p>

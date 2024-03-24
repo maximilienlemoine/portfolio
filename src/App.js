@@ -6,6 +6,7 @@ import FooterComponent from "./Component/FooterComponent";
 import AboutComponent from "./Component/AboutComponent";
 import SkillsComponent from "./Component/SkillsComponent";
 import ContactComponent from "./Component/ContactComponent";
+import WorksComponent from "./Component/WorksComponent";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <HeroComponent/>
             <AboutComponent/>
             <SkillsComponent/>
+            <WorksComponent/>
             <ContactComponent/>
             <FooterComponent/>
         </div>

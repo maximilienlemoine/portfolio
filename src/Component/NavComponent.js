@@ -10,18 +10,18 @@ function NavComponent() {
                 <ul className={'flex gap-5'}>
                     <li>
                         <a href={'https://www.linkedin.com/in/maximilien-lemoine/'} className={'flex gap-2'}>
-                            <img src={LinkedInIcon} alt={'Icone de linkedin'}/>
+                            <img src={LinkedInIcon} alt={'Icone Linkedin'}/>
                             <span className={'hidden md:block'}> Linkedin</span>
                         </a>
                     </li>
                     <li>
                         <a href={'https://github.com/maximilienlemoine'} className={'flex gap-2'}>
-                            <img src={GitHubIcon} alt={'Icone de linkedin'}/>
+                            <img src={GitHubIcon} alt={'Icone GitHub'}/>
                             <span className={'hidden md:block'}> GitHub</span>
                         </a>
                     </li>
                     <li className={'hidden sm:block'}><a href={'#about'}>A propos</a></li>
-                    <li className={'hidden sm:block'}><a href={'#projects'}>Projets</a></li>
+                    <li className={'hidden sm:block'}><a href={'#works'}>Réalisations</a></li>
                     <li className={'hidden sm:block'}><a href={'#contact'}>Contact</a></li>
                 </ul>
             </nav>
