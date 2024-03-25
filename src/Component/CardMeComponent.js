@@ -29,7 +29,9 @@ function CardMeComponent() {
                 <li className={'bg-primary px-2 rounded-full font-bold text-background'}>React Native</li>
             </ul>
             <button
-                className={'bg-white text-background ubuntu rounded-full p-2 mt-4 mx-auto flex gap-2 font-bold'}>
+                className={'bg-white text-background ubuntu rounded-full p-2 mt-4 mx-auto flex gap-2 font-bold'}
+                onClick={() => window.open('https://www.maximilien-lemoine.fr/CV_Maximilien_LEMOINE.pdf', '_blank')}
+            >
                 Curriculum Vitae <img src={DownloadIcon} alt={'Icone de téléchargement'}/>
             </button>
         </ul>
