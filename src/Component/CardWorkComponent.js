@@ -6,7 +6,14 @@ function CardWorkComponent(work) {
         <div className="flex flex-col gap-5 lg:gap-10 items-center content-center justify-center">
             {work.workImage ? <img src={work.workImage} alt={work.workTitle}/> : null}
             <h4 className={'text-xl md:text-4xl ubuntu'}>{work.workTitle}</h4>
-            <p className={'lg:text-xl'}>{work.workDescription}</p>
+            <p>Objectif{work.workGoal.length > 1 ? 's' : ''} :
+                <ul>
+                    {work.workGoal.map((goal, index) => (
+                        <li key={index}>- {goal}</li>
+                    ))}
+                </ul>
+            </p>
+            <p className={'lg:text-xl lg:w-3/5 md:w-4/5'}>{work.workDescription}</p>
             {work.workWebLink ?
                 <a href={'https://' + work.workWebLink} target={'_blank'} rel="noreferrer" className={'text-sm'}>
                     Lien du projet : <span className={'text-secondary'}>{work.workWebLink}</span>

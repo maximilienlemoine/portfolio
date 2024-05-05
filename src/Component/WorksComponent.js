@@ -3,7 +3,6 @@ import React from "react";
 import CardWorkComponent from "./CardWorkComponent";
 import CircleLeftIcon from "../icons/circle-left.svg";
 import CircleRightIcon from "../icons/circle-right.svg";
-import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -55,44 +54,58 @@ function WorksComponent() {
                 >
                     <CardWorkComponent
                         workTitle={'Movie API'}
-                        workDescription={'Back-end API d\'un site fictif de listing de films'}
+                        workGoal={['Création d\'une API REST', 'Authentification JWT', 'Recupération de mot de passe']}
+                        workDescription={'Back-end API d\'un site fictif de listing de films. Sécurisation via JWT. Gestion des utilisateurs et des films. Gestion des mots de passe.'}
                         workWebLink={'movieapi.maximilien-lemoine.fr'}
                         workCodeLink={'github.com/maximilienlemoine/WR506-MovieApp'}
                         workStack={['PHP', 'Symfony']}
                     />
                     <CardWorkComponent
                         workTitle={'Movie APP'}
-                        workDescription={'Front-end d\'un site fictif de listing de films'}
+                        workGoal={['Création de composants réutilisables', 'Utilisation d\'une API REST']}
+                        workDescription={'Front-end d\'un site fictif de listing de films. Système de recherche dynamique. Gestion de la pagination et de la navigation. Gestion de l\'authentification.'}
                         workWebLink={'movie.maximilien-lemoine.fr'}
                         workCodeLink={'github.com/maximilienlemoine/WR505-MovieApp'}
                         workStack={['JS', 'Vue.js']}
                     />
                     <CardWorkComponent
                         workTitle={'Pokedex'}
-                        workDescription={'Application mobile simulant un pokedex'}
+                        workGoal={['Utilisation de composants natif', 'Utilisation d\'une API REST', 'Gestion de la navigation']}
+                        workDescription={'En se basant sur PokeAPI, création d\'une application mobile de listing de pokémons. Système de favoris et de recherche. Gestion de la rotation de l\'écran et de la photo de profil.'}
                         workCodeLink={'github.com/maximilienlemoine/wr510'}
                         workStack={['React Native']}
                     />
                     <CardWorkComponent
-                        workTitle={'Escape Room'}
-                        workDescription={'Escape Room en réalité virtuelle'}
+                        workTitle={'Escape the H103'}
+                        workGoal={['Création d\'un environnement 3D', 'Création d\'énigmes et mécanique de jeu', 'Gestion événement VR']}
+                        workDescription={'Escape game en réalité virtuelle en équipe de deux.'}
                         workWebLink={'mmi21f11.mmi-troyes.fr/wr507'}
                         workCodeLink={'github.com/Antoaane/WR-507-Evaluation'}
                         workStack={['C#', 'Unity']}
                     />
                     <CardWorkComponent
                         workTitle={'SCARE'}
-                        workDescription={'Calculateur du Score SCARE (SCA en REgulation), à usage des médecins régulateurs des urgences'}
+                        workGoal={['Calculateur en fonction de critères médicaux', 'Interface simple et intuitive', 'Référencement du site sur les moteurs de recherche']}
+                        workDescription={'Calculateur du Score SCARE (SCA en REgulation), à usage des médecins régulateurs des urgences. Hebergé sur les serveurs de l\'Université de Reims Champagne-Ardenne.'}
                         workWebLink={'scare.univ-reims.fr'}
                         workCodeLink={'github.com/maximilienlemoine/scare'}
                         workStack={['JS']}
                     />
                     <CardWorkComponent
                         workTitle={'Portfolio'}
-                        workDescription={'Mon portfolio, réalisé avec React'}
+                        workGoal={['Exposition de réalisations et compétences', 'Accessibilité', 'Interface dynamique et responsive', 'Référencement', 'Rédaction de contenu']}
+                        workDescription={'Mon portfolio, réalisé avec React. Il présente mes compétences, mes réalisations et mon parcours. Il est responsive et accessible.'}
                         workWebLink={'portfolio.maximilien-lemoine.fr'}
                         workCodeLink={'github.com/maximilienlemoine/portfolio'}
                         workStack={['JS', 'React']}
+                    />
+                    <CardWorkComponent
+                        workTitle={'WS501 - Preuve de concept web'}
+                        workGoal={['Travail en équipe', 'Utilisation de technologies 3D', 'Gestion de projet']}
+                        workDescription={'Création d\'un configurateur de vélo en 3D. Gestion de projet. Utilisation de Three.js pour l\'importation du modèle 3D. Utilisation de React pour l\'interface utilisateur.'}
+                        workWebLink={'mmi21e09.mmi-troyes.fr/ws501'}
+                        workCodeLink={'github.com/maximilienlemoine/ws501-app'}
+                        workStack={['JS', 'Three.js', 'React']}
                     />
                 </Carousel>
             </div>

@@ -21,17 +21,18 @@ function AboutComponent() {
                             className={'text-primary'}>développement back-end</span>. <br/> <br/>
                             Avec un large éventail de langages de programmation, je possède des compétences avancées
                             en <span className={'text-primary'}>PHP</span>, <span
-                            className={'text-primary'}>JavaScript</span> (y compris les frameworks comme <span
+                            className={'text-primary'}>JavaScript</span> (<span
                             className={'text-primary'}>React</span>, <span className={'text-primary'}>Vue.js</span>) ou
                             encore <span className={'text-primary'}>Node.js</span>, ainsi que des bases en <span
-                            className={'text-primary'}>C#</span>. <br/> <br/>
+                            className={'text-primary'}>C#</span> et <span className={'text-primary'}>Python</span>.
+                            <br/> <br/>
 
                             Je me suis rapidement familiarisé avec le Framework <span
                             className={'text-primary'}>Symfony</span>, où je suis désormais à un niveau intermédiaire,
                             j'ai également acquis une expérience pratique avec <span
-                            className={'text-primary'}>Express.js</span> pour le développement d'<span
-                            className={'text-primary'}>API</span> et <span className={'text-primary'}>Unity</span> pour
+                            className={'text-primary'}>Express.js</span> et <span className={'text-primary'}>Unity</span> pour
                             la création d'applications et de jeux vidéo (<span
+                            className={'text-primary'}>2D</span>, <span
                             className={'text-primary'}>3D</span>, <span
                             className={'text-primary'}>Réalité augmentée</span> et <span
                             className={'text-primary'}>virtuelle</span>). <br/>

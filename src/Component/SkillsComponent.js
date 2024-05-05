@@ -26,7 +26,7 @@ function SkillsComponent() {
                     <CardSkillComponent skillTitle={'Front-end'} skillDescription={'JavaScript (React, Vue.js), Tailwind'} skillImage={FrontEndIcon}/>
                     <CardSkillComponent skillTitle={'Back-end'} skillDescription={'PHP (Symfony), Node.js (Express.js), Sql'} skillImage={BackEndIcon}/>
                     <CardSkillComponent skillTitle={'Développement Mobile'} skillDescription={'React Native'} skillImage={MobileIcon}/>
-                    <CardSkillComponent skillTitle={'Dispositif interactif'} skillDescription={'C#, Unity, Blender'} skillImage={InteractiveIcon}/>
+                    <CardSkillComponent skillTitle={'Dispositif interactif'} skillDescription={'C#, Unity, Godot, Blender'} skillImage={InteractiveIcon}/>
                     <CardSkillComponent skillTitle={'Administration Réseau'} skillDescription={'Linux, Docker'} skillImage={NetworkIcon}/>
                     <CardSkillComponent skillTitle={'Outils de développement'} skillDescription={'Git, GitHub, PhpStorm'} skillImage={ToolsIcon}/>
                 </div>

@@ -6,6 +6,7 @@ import SymfonyIcon from '../icons/symfony.svg';
 import UnityIcon from '../icons/unity.svg';
 import CSharpIcon from '../icons/csharp.svg';
 import VueJsIcon from '../icons/vuejs.svg';
+import ThreeJsIcon from '../icons/Threejs.svg';
 
 function BadgeComponent(props) {
     const techStack = props.techStack;
@@ -28,6 +29,8 @@ function BadgeComponent(props) {
                 return <img src={CSharpIcon} alt={'C#'} className={'w-14 md:w-20 h-14 md:h-20'}/>;
             case 'Vue.js':
                 return <img src={VueJsIcon} alt={'Vue.js'} className={'w-14 md:w-20 h-14 md:h-20'}/>;
+            case 'Three.js':
+                return <img src={ThreeJsIcon} alt={'Three.js'} className={'w-14 md:w-20 h-14 md:h-20'}/>;
             default:
                 return null;
         }
