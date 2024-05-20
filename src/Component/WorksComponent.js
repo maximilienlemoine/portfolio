@@ -102,7 +102,7 @@ function WorksComponent() {
                     <CardWorkComponent
                         workTitle={'WS501 - Preuve de concept web'}
                         workGoal={['Travail en équipe', 'Utilisation de technologies 3D', 'Gestion de projet']}
-                        workDescription={'Création d\'un configurateur de vélo en 3D. Gestion de projet. Utilisation de Three.js pour l\'importation du modèle 3D. Utilisation de React pour l\'interface utilisateur.'}
+                        workDescription={'Création d\'un configurateur d\'un modèle de vélos en 3D. Gestion de projet. Utilisation de Three.js pour l\'importation du modèle 3D. Utilisation de React pour l\'interface utilisateur.'}
                         workWebLink={'mmi21e09.mmi-troyes.fr/ws501'}
                         workCodeLink={'github.com/maximilienlemoine/ws501-app'}
                         workStack={['JS', 'Three.js', 'React']}
