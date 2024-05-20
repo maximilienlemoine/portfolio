@@ -19,7 +19,8 @@ function AboutComponent() {
                             suis actuellement alternant en formation à l'IUT de Troyes en BUT Métiers du Multimédia et
                             de l'Internet, avec une expertise croissante dans le domaine du <span
                             className={'text-primary'}>développement back-end</span>. <br/> <br/>
-                            Avec un large éventail de langages de programmation, je possède des compétences avancées
+                            Je détiens un large éventail de langages de programmation. Mais je possède également des
+                            compétences avancées
                             en <span className={'text-primary'}>PHP</span>, <span
                             className={'text-primary'}>JavaScript</span> (<span
                             className={'text-primary'}>React</span>, <span className={'text-primary'}>Vue.js</span>) ou
@@ -28,9 +29,10 @@ function AboutComponent() {
                             <br/> <br/>
 
                             Je me suis rapidement familiarisé avec le Framework <span
-                            className={'text-primary'}>Symfony</span>, où je suis désormais à un niveau intermédiaire,
-                            j'ai également acquis une expérience pratique avec <span
-                            className={'text-primary'}>Express.js</span> et <span className={'text-primary'}>Unity</span> pour
+                            className={'text-primary'}>Symfony</span>, où je suis désormais à un niveau intermédiaire.
+                            J'ai également acquis une expérience pratique avec <span
+                            className={'text-primary'}>Express.js</span> et <span
+                            className={'text-primary'}>Unity</span> pour
                             la création d'applications et de jeux vidéo (<span
                             className={'text-primary'}>2D</span>, <span
                             className={'text-primary'}>3D</span>, <span
@@ -39,11 +41,11 @@ function AboutComponent() {
 
                             Cette combinaison de compétences me permet de concevoir et de mettre en œuvre des solutions
                             web et logicielles <span className={'text-primary'}>robustes</span> et <span
-                            className={'text-primary'}>innovants</span>, tout en étant capable de m'<span
+                            className={'text-primary'}>innovantes</span>, tout en étant capable de m'<span
                             className={'text-primary'}>adapter aux besoins spécifiques</span> de chaque projet. <br/>
                             <br/>
 
-                            De plus, je suis familier avec les outils essentiels de la suite <span
+                            De plus, je suis familié avec les outils essentiels de la suite <span
                             className={'text-primary'}>Adobe</span>, tels que <span className={'text-primary'}>Premiere Pro</span>, <span
                             className={'text-primary'}>Photoshop</span> et <span
                             className={'text-primary'}>Illustrator</span>, ce qui me permet d'apporter une touche
@@ -52,7 +54,7 @@ function AboutComponent() {
                             Doté d'une forte orientation vers le travail d'équipe, j'apprécie collaborer avec mes pairs
                             pour relever des défis et réaliser des projets ambitieux. Je m'efforce également de rester à
                             l'affût des dernières avancées et tendances dans le domaine du web, afin de maintenir mes
-                            compétences à jour afin de garantir des solutions innovantes et pertinentes.
+                            compétences à jour et garantir des solutions innovantes et pertinentes.
                         </p>
                         <span className={'text-secondary'}>&lt;p/&gt;</span>
                     </div>
