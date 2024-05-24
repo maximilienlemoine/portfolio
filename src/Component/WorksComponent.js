@@ -78,7 +78,7 @@ function WorksComponent() {
                     <CardWorkComponent
                         workTitle={'Escape the H103'}
                         workGoal={['Création d\'un environnement 3D', 'Création d\'énigmes et mécanique de jeu', 'Gestion événement VR']}
-                        workDescription={'Escape game en réalité virtuelle en équipe de deux.'}
+                        workDescription={'Escape game en réalité virtuelle en équipe de deux. Modélisation de la salle. Utilisation "XR interaction toolkit". Développement des égnimes.'}
                         workWebLink={'mmi21f11.mmi-troyes.fr/wr507'}
                         workCodeLink={'github.com/Antoaane/WR-507-Evaluation'}
                         workStack={['C#', 'Unity']}

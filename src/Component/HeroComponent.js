@@ -9,7 +9,7 @@ function HeroComponent() {
                 <CardMeComponent/>
                 <div className={'mx-4 my-7 xl:my-0'}>
                     <div>
-                        <span><span className={'text-secondary'}>&lt;h1&gt;</span></span><br/>
+                        <span className={'text-secondary'}>&lt;h1&gt;</span><br/>
                         <h1 className={'text-3xl sm:text-5xl md:text-6xl pl-5 inline-block'}>
                             Hey,<br/> Je suis <span className={'text-primary'}>Maximilien</span>,<br/> Développeur
                             Full-Stack.
@@ -17,13 +17,15 @@ function HeroComponent() {
                         <span className={'text-secondary'}>&lt;h1/&gt;</span>
                     </div>
                     <div className={'mt-5'}>
-                        <span><span className={'text-secondary'}>&lt;p&gt;</span></span>
+                        <span className={'text-secondary'}>&lt;p&gt;</span>
                         <p className={'font-light pl-5'}>J'aime créer des expériences Web incroyables.
                             Si vous recherchez un développeur qui aime faire avancer les choses,</p>
                         <span className={'text-secondary'}>&lt;p/&gt;</span>
                     </div>
                     <div className={'mt-3'}>
-                        <a href={'#contact'} className={'text-primary text-2xl pl-5'}>Contactez moi !</a>
+                        <span className={'text-secondary'}>&lt;a&gt;</span><br/>
+                        <a href={'#contact'} className={'text-primary text-2xl pl-5'}>Contactez moi !</a> <br/>
+                        <span className={'text-secondary'}>&lt;a/&gt;</span>
                     </div>
                 </div>
             </div>
