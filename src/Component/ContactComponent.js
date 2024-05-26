@@ -1,29 +1,32 @@
 import ScrollComponent from "./ScrollComponent";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import SendIcon from "../icons/send.svg";
 import CloseIcon from "../icons/xmark.svg";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function ContactComponent() {
     const [formData, setFormData] = useState({name: '', email: '', message: ''});
     const [formErrors, setFormErrors] = useState({name: '', email: '', message: ''});
-    const [isLoading, setIsLoading] = useState(false);
     const [flashMessage, setFlashMessage] = useState('');
-
-    useEffect(() => {
-        if (isLoading) {
-            return sendEmail();
-        }
-    }, [isLoading]);
+    const [recaptcha, setRecaptcha] = useState(null);
 
     const sendEmail = async () => {
         if (isErrors())
             return;
 
+        // send data in formData
+        let formDataSend = new FormData();
+        formDataSend.append('name', formData.name);
+        formDataSend.append('email', formData.email);
+        formDataSend.append('message', formData.message);
+
         try {
-            const response = await fetch(process.env.REACT_APP_BACK_APP_URL + '/send-email', {
+            const response = await fetch(process.env.REACT_APP_API_URL + '/private-api/send-mail', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(formData)
+                headers: {
+                    'Authorization': 'Bearer ' + process.env.REACT_APP_API_SECRET
+                },
+                body: formDataSend
             });
             const data = await response.json();
             setFlashMessage(data.message);
@@ -33,19 +36,17 @@ function ContactComponent() {
         } catch (e) {
             console.error(e);
         }
-        setIsLoading(false);
     }
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
-        handleErrors(e);
     }
 
     const isErrors = () => {
         return !!(formErrors.name || formErrors.email || formErrors.message);
     }
 
-    const handleErrors = (e) => {
+    const handleErrors = () => {
         setFormErrors({name: '', email: '', message: ''});
 
         // Check if name is not null
@@ -65,11 +66,14 @@ function ContactComponent() {
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        if (!recaptcha)
+            return;
+
         e.preventDefault();
         handleErrors(e);
 
-        setIsLoading(true);
+        await sendEmail()
     }
 
     const clearFlash = () => {
@@ -87,12 +91,6 @@ function ContactComponent() {
                     <h3 className={'text-2xl sm:text-3xl md:text-4xl text-primary bg-background m-10 inline-block p-3 border border-primary rounded-tl-3xl rounded-br-3xl'}>
                         Envoyez-moi un message!
                     </h3>
-                </div>
-                <div className="flex justify-center">
-                    <div
-                        className={'text-background p-2 rounded-md ubuntu md:text-xl bg-red-300 w-4/6 flex justify-between'}>
-                        <p>Formulaire momentanément indisponible, veuillez utiliser l'adresse : <a href={'mailto:maximilien.lemoine.pro@gmail.com'}>maximilien.lemoine.pro@gmail.com</a></p>
-                    </div>
                 </div>
                 {flashMessage && <div className="flex justify-center">
                     <div
@@ -149,12 +147,16 @@ function ContactComponent() {
                             {formErrors.message}
                         </p>
                     </label>
+                    <ReCAPTCHA
+                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                        onChange={value => setRecaptcha(value)}
+                    />
                     <button
                         className={'bg-primary text-background p-3 rounded-2xl flex items-center text-xl ubuntu'}
                         type={'button'}
                         id={'form-contact-submit'}
                         onClick={handleSubmit}
-                        disabled={true} //TODO: Enable button when form is available
+                        disabled={!recaptcha}
                     >
                         Envoyer
                         <img src={SendIcon} alt={'send'} className={'w-5 h-5 ml-2'}/>
