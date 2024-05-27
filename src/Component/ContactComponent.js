@@ -109,7 +109,7 @@ function ContactComponent() {
                                 type={'text'}
                                 name={'name'}
                                 required={true}
-                                placeholder={'Reinseignez votre nom complet'}
+                                placeholder={'Renseignez votre nom complet'}
                                 className={'p-3 bg-background border-0 border-secondary border-b-2 text-white'}
                                 value={formData.name}
                                 onChange={handleChange}
@@ -124,7 +124,7 @@ function ContactComponent() {
                                 type={'email'}
                                 name={'email'}
                                 required={true}
-                                placeholder={'Reinseignez votre adresse email'}
+                                placeholder={'Renseignez votre adresse email'}
                                 className={'p-3 bg-background border-0 border-secondary border-b-2 text-white'}
                                 value={formData.email}
                                 onChange={handleChange}
