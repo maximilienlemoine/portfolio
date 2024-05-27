@@ -33,7 +33,7 @@ function WorksComponent() {
         <section className={'bg-backgroundSecondary section py-14'} id='works'>
             <ScrollComponent/>
             <div className={'flex flex-col items-center gap-5'}>
-                <h2 className={'text-3xl md:text-4xl p-3 text-primary text-center pb-0'}>Réalisations</h2>
+                <p className={'text-3xl md:text-4xl p-3 text-primary text-center pb-0'}>Réalisations</p>
                 <hr className={'border-primary w-3/12 sm:w-2/12 lg:w-1/12 my-0'}/>
                 <p className={'text-center'}>Sélection de réalisation disponible.</p>
             </div>

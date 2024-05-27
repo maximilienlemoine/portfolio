@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "../images/background.jpg";
+import Background from "../images/background.webp";
 import ScrollComponent from "./ScrollComponent";
 
 function AboutComponent() {
@@ -8,9 +8,9 @@ function AboutComponent() {
             <ScrollComponent/>
             <div className={'container flex flex-col lg:flex-row items-center pb-20'}>
                 <div className={'flex flex-col items-center'}>
-                    <h2 className={'text-3xl md:text-4xl bg-background inline-block p-3 border border-primary rounded-tl-3xl rounded-br-3xl'}>
+                    <p className={'text-3xl md:text-4xl bg-background inline-block p-3 border border-primary rounded-tl-3xl rounded-br-3xl'}>
                         A propos
-                    </h2>
+                    </p>
                     <div className={'bg-background m-10 p-5 rounded-2xl'}>
                         <span><span className={'text-secondary'}>&lt;p&gt;</span></span>
                         <p className={'pl-3 py-2'}>

@@ -4,7 +4,7 @@ import CardMeComponent from "./CardMeComponent";
 function HeroComponent() {
     return (
         <section className={'pb-10 hero'}>
-            <h2 className={'text-secondary text-center hidden md:block text-7xl py-10 pt-20'}>Développeur</h2>
+            <p className={'text-secondary text-center hidden md:block text-7xl py-10 pt-20'}>Développeur</p>
             <div className={'flex flex-col items-center xl:flex-row xl:justify-evenly'}>
                 <CardMeComponent/>
                 <div className={'mx-4 my-7 xl:my-0'}>
@@ -18,8 +18,8 @@ function HeroComponent() {
                     </div>
                     <div className={'mt-5'}>
                         <span className={'text-secondary'}>&lt;p&gt;</span>
-                        <p className={'font-light pl-5'}>J'aime créer des expériences Web incroyables.
-                            Si vous recherchez un développeur qui aime faire avancer les choses,</p>
+                        <h2 className={'font-light pl-5'}>J'aime créer des expériences Web incroyables.
+                            Si vous recherchez un développeur qui aime faire avancer les choses,</h2>
                         <span className={'text-secondary'}>&lt;p/&gt;</span>
                     </div>
                     <div className={'mt-3'}>

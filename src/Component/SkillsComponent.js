@@ -18,7 +18,7 @@ function SkillsComponent() {
             <ScrollComponent/>
             <div>
                 <div className={'flex flex-col items-center gap-3'}>
-                    <h2 className={'text-3xl md:text-4xl bg-background p-3 text-primary text-center pb-0'}>Compétences</h2>
+                    <p className={'text-3xl md:text-4xl bg-background p-3 text-primary text-center pb-0'}>Compétences</p>
                     <hr className={'border-primary w-3/12 sm:w-2/12 lg:w-1/12 my-0'}/>
                     <p className={'text-center'}>Je n'arrête jamais d'apprendre et de m'améliorer.</p>
                 </div>
@@ -33,7 +33,7 @@ function SkillsComponent() {
                 <div className={'flex flex-row flex-wrap justify-evenly items-center gap-10 my-10 lg:my-20'}>
                     <div>
                         <img src={PhpIcon} alt={'Php'} className={'w-28 h-28 bg-php p-4 rounded-full'}/>
-                        <p className={'text-center text-php text-xl ubuntu mt-3'}>PHP</p>
+                        <p className={'text-center text-xl ubuntu mt-3'}>PHP</p>
                     </div>
                     <div>
                         <img src={JsIcon} alt={'JavaScript'} className={'w-28 h-28 bg-javascript p-4 rounded-full'}/>
@@ -45,7 +45,7 @@ function SkillsComponent() {
                     </div>
                     <div>
                         <img src={UnityIcon} alt={'Unity'} className={'w-28 h-28 bg-unity p-4 rounded-full'}/>
-                        <p className={'text-center text-unity text-xl ubuntu mt-3'}>Unity</p>
+                        <p className={'text-center text-xl ubuntu mt-3'}>Unity</p>
                     </div>
                 </div>
             </div>
