@@ -16,6 +16,7 @@ module.exports = {
         php: "#8892BF",
         javascript: "#F0DB4F",
         unity: "#000000",
+        godot: "#478CBF",
       },
     },
   },

@@ -107,6 +107,13 @@ function WorksComponent() {
                         workCodeLink={'github.com/maximilienlemoine/ws501-app'}
                         workStack={['JS', 'Three.js', 'React']}
                     />
+                    <CardWorkComponent
+                        workTitle={'Platforms'}
+                        workGoal={['Découverte de Godot', 'Intéractions 2D', 'Gestion de projet']}
+                        workDescription={'Création d\'un jeu de plateforme en 2D. Utilisation de Godot pour le développement. Gestion de projet. Création de niveaux et de mécaniques de jeu.'}
+                        workCodeLink={'github.com/maximilienlemoine/Platforms'}
+                        workStack={['Godot']}
+                    />
                 </Carousel>
             </div>
 

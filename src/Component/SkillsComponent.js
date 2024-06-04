@@ -11,6 +11,7 @@ import PhpIcon from "../icons/php.svg";
 import JsIcon from "../icons/js.svg";
 import ReactIcon from "../icons/react.svg";
 import UnityIcon from "../icons/unity.svg";
+import GodotIcon from "../icons/godot.svg";
 
 function SkillsComponent() {
     return (
@@ -37,15 +38,19 @@ function SkillsComponent() {
                     </div>
                     <div>
                         <img src={JsIcon} alt={'JavaScript'} className={'w-28 h-28 bg-javascript p-4 rounded-full'}/>
-                        <p className={'text-center text-javascript text-xl ubuntu mt-3'}>JavaScript</p>
+                        <p className={'text-center text-xl ubuntu mt-3'}>JavaScript</p>
                     </div>
                     <div>
                         <img src={ReactIcon} alt={'React'} className={'w-28 h-28 bg-react p-4 rounded-full'}/>
-                        <p className={'text-center text-react text-xl ubuntu mt-3'}>React Native</p>
+                        <p className={'text-center text-xl ubuntu mt-3'}>React Native</p>
                     </div>
                     <div>
                         <img src={UnityIcon} alt={'Unity'} className={'w-28 h-28 bg-unity p-4 rounded-full'}/>
                         <p className={'text-center text-xl ubuntu mt-3'}>Unity</p>
+                    </div>
+                    <div>
+                        <img src={GodotIcon} alt={'Godot'} className={'w-28 h-28 bg-godot p-4 rounded-full'}/>
+                        <p className={'text-center text-xl ubuntu mt-3'}>Godot</p>
                     </div>
                 </div>
             </div>
