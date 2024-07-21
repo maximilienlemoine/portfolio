@@ -29,7 +29,7 @@ function CardWorkComponent(work) {
             {work.workStack ?
                 <ul className={'flex flex-row flex-wrap justify-evenly items-center gap-5'}>
                     {work.workStack.map((stack, index) => (
-                        <BadgeStackComponent key={index} techStack={[stack]} />
+                        <BadgeStackComponent key={index} title={[stack[0]]} icon={[stack[1]]} />
                     ))}
                 </ul>
                 : null
