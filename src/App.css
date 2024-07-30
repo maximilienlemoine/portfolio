@@ -47,11 +47,28 @@ button:disabled {
 }
 
 .app-stack-icon-size {
+    flex: 1 0 50%;
     width: 7rem !important;
 }
 
+@media (min-width: 450px) {
+    .app-stack-icon-size {
+        flex: 1 0 31%;
+        width: 7rem !important;
+    }
+}
+
 @media (min-width: 768px) {
+    .app-stack-icon-size {
+        flex: 1 0 21%;
+    }
     .app-icon-size {
         width: 5rem !important;
+    }
+}
+
+@media (min-width: 1080px) {
+    .app-stack-icon-size {
+        flex: 1 0 15%;
     }
 }

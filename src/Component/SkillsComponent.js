@@ -67,7 +67,7 @@ function SkillsComponent() {
                         />
                     })}
                 </div>
-                <div className={'flex flex-row flex-wrap justify-evenly items-center gap-10 my-10 lg:my-20'}>
+                <div className={'flex flex-row flex-wrap justify-evenly items-center mx-10 gap-10 my-10 lg:my-20'}>
                     {stacks.map((stack, index) => {
                         return <CardStackComponent
                             key={index}
