@@ -91,6 +91,9 @@ function ContactComponent() {
                     <h3 className={'text-2xl sm:text-3xl md:text-4xl text-primary bg-background m-10 inline-block p-3 border border-primary rounded-tl-3xl rounded-br-3xl'}>
                         Envoyez-moi un message!
                     </h3>
+                    <a href={"mailto:maximilien.lemoine.pro@gmail.com"}
+                       className={'text-center'}>maximilien.lemoine.pro@gmail.com</a>
+                    <p className={'text-center'}>Ou depuis ce formulaire !</p>
                 </div>
                 {flashMessage && <div className="flex justify-center">
                     <div
