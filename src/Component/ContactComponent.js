@@ -21,7 +21,7 @@ function ContactComponent() {
         formDataSend.append('message', formData.message);
 
         try {
-            const response = await fetch(process.env.REACT_APP_API_URL + '/private-api/send-mail', {
+            const response = await fetch(process.env.REACT_APP_API_URL + 'private-api/send-mail', {
                 method: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + process.env.REACT_APP_API_SECRET
