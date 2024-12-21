@@ -27,7 +27,7 @@ function WorksComponent() {
         };
 
         fetchData();
-    })
+    }, []);
 
     const renderCenterRightControls = ({nextDisabled, nextSlide}) => (
         <button
