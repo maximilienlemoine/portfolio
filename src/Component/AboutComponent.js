@@ -1,11 +1,9 @@
 import React from "react";
 import Background from "../images/background.webp";
-import ScrollComponent from "./ScrollComponent";
 
 function AboutComponent() {
     return (
-        <section className={'bg-backgroundSecondary section'} id='about'>
-            <ScrollComponent/>
+        <section className={'bg-backgroundSecondary section py-14'} id='about'>
             <div className={'container flex flex-col lg:flex-row items-center pb-20'}>
                 <div className={'flex flex-col items-center'}>
                     <p className={'text-3xl md:text-4xl bg-background inline-block p-3 border border-primary rounded-tl-3xl rounded-br-3xl'}>
