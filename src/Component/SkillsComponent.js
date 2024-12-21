@@ -1,4 +1,3 @@
-import ScrollComponent from "./ScrollComponent";
 import React, {useEffect, useState} from "react";
 import CardSkillComponent from "./CardSkillComponent";
 import CardStackComponent from "./CardStackComponent";
@@ -43,8 +42,7 @@ function SkillsComponent() {
     }, []);
 
     return (
-        <section className={'bg-background section'} id='skills'>
-            <ScrollComponent/>
+        <section className={'bg-background section py-14'} id='skills'>
             <div>
                 <div className={'flex flex-col items-center gap-3'}>
                     <p className={'text-3xl md:text-4xl bg-background p-3 text-primary text-center pb-0'}>Compétences</p>

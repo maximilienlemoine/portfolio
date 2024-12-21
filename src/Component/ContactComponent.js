@@ -1,4 +1,3 @@
-import ScrollComponent from "./ScrollComponent";
 import React, {useState} from "react";
 import SendIcon from "../icons/send.svg";
 import CloseIcon from "../icons/xmark.svg";
@@ -82,7 +81,6 @@ function ContactComponent() {
 
     return (
         <section className={'bg-background section py-14'} id='contact'>
-            <ScrollComponent/>
             <div>
                 <div className={'flex flex-col items-center gap-4'}>
                     <p className={'text-3xl md:text-4xl bg-background p-3 text-primary text-center pb-0'}>Contact</p>
