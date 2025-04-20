@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import NavComponent from "./Component/NavComponent";
 import HeroComponent from "./Component/HeroComponent";
 import React from "react";
@@ -11,14 +11,14 @@ import WorksComponent from "./Component/WorksComponent";
 function App() {
     return (
         <div className="App bg-background">
-            <NavComponent/>
-            <hr className={'w-5/6 mx-auto border-gray'}/>
-            <HeroComponent/>
-            <AboutComponent/>
-            <SkillsComponent/>
-            <WorksComponent/>
-            <ContactComponent/>
-            <FooterComponent/>
+            <NavComponent />
+            <hr className={"w-5/6 mx-auto border-gray"} />
+            <HeroComponent />
+            <AboutComponent />
+            <SkillsComponent />
+            <WorksComponent />
+            <ContactComponent />
+            <FooterComponent />
         </div>
     );
 }
