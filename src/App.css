@@ -5,27 +5,32 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Mono', monospace;
-    color: #FFFFFF;
+    font-family: "IBM Plex Mono", monospace;
+    color: #ffffff;
     font-size: 12px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ubuntu', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Ubuntu", sans-serif;
 }
 
 .card-cv {
     width: 320px;
     height: 480px;
-    border: solid 1px #FFFFFF;
+    border: solid 1px #ffffff;
     border-radius: 160px 0 160px 0;
 }
 
 .ubuntu {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
 
-.hero{
+.hero {
     min-height: 90vh;
 }
 
