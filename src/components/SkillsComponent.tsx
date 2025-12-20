@@ -4,19 +4,21 @@ import { Skill } from "@/models/skill";
 import { Stack } from "@/models/stack";
 
 async function SkillsComponent() {
-    const skillsResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/skill/get", {
-        method: "POST",
+    const skillsResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/skill", {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
+            'Accept': 'application/json',
             Authorization: "Bearer " + process.env.API_SECRET,
         },
     });
     const skills: Skill[] = await skillsResponse.json();
 
-    const stackResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/stack/get", {
-        method: "POST",
+    const stackResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/stack", {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
+            'Accept': 'application/json',
             Authorization: "Bearer " + process.env.API_SECRET,
         },
     });

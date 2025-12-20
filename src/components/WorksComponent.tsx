@@ -4,10 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CarouselComponent from "@/components/CarouselComponent";
 
 async function WorksComponent() {
-    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/project/get", {
-        method: "POST",
+    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/project", {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
+            'Accept': 'application/json',
             Authorization: "Bearer " + process.env.API_SECRET,
         },
     });
