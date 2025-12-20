@@ -15,7 +15,7 @@ async function CardMeComponent() {
     const me: Me = await meResponse.json();
 
     return (
-        <div className={"border-white border card-cv mt-10 md:mt-0"}>
+        <div className={"border-white border card-cv mt-3 md:mt-0"}>
             <Image
                 src={me.image}
                 alt={"Ma photo"}
@@ -49,7 +49,7 @@ async function CardMeComponent() {
                     </ul>
                 </li>
                 <li>
-                    <DownloadCV />
+                    <DownloadCV cvLink={me.cv} />
                 </li>
             </ul>
         </div>
