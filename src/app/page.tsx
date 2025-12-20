@@ -8,7 +8,7 @@ import FooterComponent from "@/components/FooterComponent";
 
 export default function Home() {
     return (
-        <div className="App bg-background">
+        <>
             <NavComponent />
             <hr className={"w-5/6 mx-auto border-gray"} />
             <HeroComponent />
@@ -17,6 +17,6 @@ export default function Home() {
             <WorksComponent />
             <ContactComponent />
             <FooterComponent />
-        </div>
+        </>
     );
 }

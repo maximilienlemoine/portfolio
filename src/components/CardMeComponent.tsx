@@ -1,18 +1,29 @@
-// import MaximilienImage from "../images/maximilien.webp";
-// import LetterIcon from "../icons/letter.svg";
-// import LocationIcon from "../icons/location.svg";
-// import LinkIcon from "../icons/link.svg";
-// import DownloadIcon from "../icons/download.svg";
 import React from "react";
 import Image from "next/image";
 import DownloadCV from "@/components/DownloadCV";
+import { Me } from "@/models/me";
 
-function CardMeComponent() {
+async function CardMeComponent() {
+    const meResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/me", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            Authorization: "Bearer " + process.env.API_SECRET,
+        },
+    });
+    const me: Me = await meResponse.json();
+
     return (
         <div className={"border-white border card-cv mt-10 md:mt-0"}>
-            {/*<img src={MaximilienImage} alt={'Photographie de Maximilien'} height={200} width={200}*/}
-            {/*     className={'rounded-full w-3/5 mt-10 mx-auto border-2 border-primary'}/>*/}
-            <p className={"text-center text-4xl "}>Maximilien</p>
+            <Image
+                src={me.image}
+                alt={"Ma photo"}
+                className={"rounded-full w-3/5 mt-10 mx-auto border-2 border-primary"}
+                width={200}
+                height={200}
+            />
+            <p className={"text-center text-4xl "}>{me.name}</p>
             <p className={"text-center font-light"}>Développeur Full-Stack</p>
             <ul className={"p-6"}>
                 <li className={"flex gap-2"}>
