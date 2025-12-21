@@ -1,7 +1,7 @@
 import React from "react";
 import CardMeComponent from "./CardMeComponent";
 
-function HeroComponent() {
+async function HeroComponent() {
     return (
         <section className={"pb-10 hero"}>
             <p className={"text-secondary text-center hidden md:block text-7xl py-10 pt-20"}>Développeur</p>

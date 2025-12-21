@@ -6,7 +6,7 @@ import WorksComponent from "@/components/WorksComponent";
 import ContactComponent from "@/components/ContactComponent";
 import FooterComponent from "@/components/FooterComponent";
 
-export default function Home() {
+export default async function Home() {
     return (
         <>
             <NavComponent />

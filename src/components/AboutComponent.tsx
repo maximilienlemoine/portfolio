@@ -1,6 +1,6 @@
 import React from "react";
 
-function AboutComponent() {
+async function AboutComponent() {
     return (
         <section className={"bg-backgroundSecondary section py-14 flex items-stretch"} id="about">
             <div className={"container flex flex-col lg:flex-row items-center pb-20"}>

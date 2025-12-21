@@ -6,7 +6,7 @@ type CardStackProps = {
     stack: Stack;
 };
 
-function CardStackComponent({ stack }: CardStackProps) {
+async function CardStackComponent({ stack }: CardStackProps) {
     return (
         <div className={"app-stack-icon-size flex items-center flex-col"}>
             <div className="p-4 rounded-full" style={{ backgroundColor: stack.color }}>

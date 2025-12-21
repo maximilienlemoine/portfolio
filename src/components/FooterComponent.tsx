@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-function FooterComponent() {
+async function FooterComponent() {
     const date = new Date();
     return (
         <footer className={"bg-background ubuntu py-5 text-center"}>

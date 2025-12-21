@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-function NavComponent() {
+async function NavComponent() {
     return (
         <header className={"py-10 px-5"}>
             <nav className={"flex justify-between mx-3"}>
