@@ -9,7 +9,7 @@ async function SkillsComponent() {
         cache: "no-store",
         headers: {
             "Content-Type": "application/json",
-            'Accept': 'application/json',
+            Accept: "application/json",
             Authorization: "Bearer " + process.env.API_SECRET,
         },
     });
@@ -20,7 +20,7 @@ async function SkillsComponent() {
         cache: "no-store",
         headers: {
             "Content-Type": "application/json",
-            'Accept': 'application/json',
+            Accept: "application/json",
             Authorization: "Bearer " + process.env.API_SECRET,
         },
     });
