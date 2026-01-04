@@ -6,6 +6,7 @@ import CarouselComponent from "@/components/CarouselComponent";
 async function WorksComponent() {
     const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/project", {
         method: "GET",
+        cache: "no-store",
         headers: {
             "Content-Type": "application/json",
             'Accept': 'application/json',

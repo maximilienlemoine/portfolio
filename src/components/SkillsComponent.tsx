@@ -6,6 +6,7 @@ import { Stack } from "@/models/stack";
 async function SkillsComponent() {
     const skillsResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/skill", {
         method: "GET",
+        cache: "no-store",
         headers: {
             "Content-Type": "application/json",
             'Accept': 'application/json',
@@ -16,6 +17,7 @@ async function SkillsComponent() {
 
     const stackResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/stack", {
         method: "GET",
+        cache: "no-store",
         headers: {
             "Content-Type": "application/json",
             'Accept': 'application/json',

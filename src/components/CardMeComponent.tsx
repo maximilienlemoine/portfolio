@@ -6,6 +6,7 @@ import { Me } from "@/models/me";
 async function CardMeComponent() {
     const meResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "private-api/me", {
         method: "GET",
+        cache: "no-store",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
