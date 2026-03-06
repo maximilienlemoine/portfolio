@@ -17,13 +17,15 @@ async function CardMeComponent() {
 
     return (
         <div className={"border-white border card-cv mt-3 md:mt-0"}>
-            <Image
-                src={me.image}
-                alt={"Ma photo"}
-                className={"rounded-full w-3/5 mt-10 mx-auto border-2 border-primary"}
-                width={200}
-                height={200}
-            />
+            {me.image && (
+                <Image
+                    src={me.image}
+                    alt={"Ma photo"}
+                    className={"rounded-full w-3/5 mt-10 mx-auto border-2 border-primary"}
+                    width={200}
+                    height={200}
+                />
+            )}
             <p className={"text-center text-4xl "}>{me.name}</p>
             <p className={"text-center font-light"}>Développeur Full-Stack</p>
             <ul className={"p-6"}>
